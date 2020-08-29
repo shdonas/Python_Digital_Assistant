@@ -17,6 +17,7 @@ def fetch_ans(api_response):
 
 if __name__ == '__main__':
     api_id = "JH5JK7-E87Y6G3W8K"
+    print("Hello World")
 
     question = raw_input("Question: ")
     fetch_ans(api_response(api_id, question))
