@@ -1,7 +1,7 @@
 import wx
 
-from src.wolframalphaapi import WolframalphaAPI
-from src.wikipediaapi import WikipediaAPI
+from src.WolfRamAlphaAPI import WolframalphaAPI
+from src.WikipediaAPI import WikipediaAPI
 
 
 class MyFrame(wx.Frame):
