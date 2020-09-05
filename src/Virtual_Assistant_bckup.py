@@ -1,6 +1,7 @@
 import wolframalpha
-from pip._vendor.distlib.compat import raw_input
+import wikipedia
 
+# WolframAlpha
 # appID/apiKey from WolframAlpha
 api_id = "JH5JK7-E87Y6G3W8K"
 
@@ -18,12 +19,20 @@ def api_response(question):
 # this app will fetch answer using the response from WRA server
 def fetch_ans(api_response):
     answer = next(api_response.results).text
-    print(answer)
     return answer
 
 
-if __name__ == '__main__':
-    print("Hello Friends!!")
+# WikiPedia Api
+def wikiResponse(question):
+    wikipedia.set_lang("en")
+    return wikipedia.summary(question, sentences=2)
 
-    question = raw_input("Question: ")
-    fetch_ans(api_response(question))
+
+if __name__ == '__main__':
+
+    while True:
+        question = input("Hello! Ask Me...: ")
+        try:
+            print(fetch_ans(api_response(question)))
+        except:
+            print(wikiResponse(question))
